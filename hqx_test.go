@@ -7,8 +7,8 @@ import "image/png"
 
 const (
 	sample_file = "sample.png"
-	width       = 163
-	height      = 222
+	width       = 128
+	height      = 64
 )
 
 func Test_hqx1(t *testing.T) {
