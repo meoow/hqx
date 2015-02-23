@@ -1,0 +1,7 @@
+*
+!*.go
+!*.md
+!*.c
+!*.h
+!sample.png
+!.gitignore
