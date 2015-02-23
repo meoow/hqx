@@ -5,3 +5,4 @@
 !*.h
 !sample*.png
 !.gitignore
+!.gitattributes
