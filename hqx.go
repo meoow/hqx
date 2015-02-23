@@ -66,7 +66,7 @@ func data2img(data []uint32, width, height int) image.Image {
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
 			pixel_raw := data[pixel_idx]
-			// BRGA -> RGBA
+			// BGRA -> RGBA
 			rgb[2] = (pixel_raw & 0xff000000) >> 24 //blue
 			rgb[1] = (pixel_raw & 0x00ff0000) >> 16 //green
 			rgb[0] = (pixel_raw & 0x0000ff00) >> 8  //red
