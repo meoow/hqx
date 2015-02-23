@@ -1,2 +1,2 @@
-*.c linguist-documantation=false
-*.h linguist-documantation=false
+*.c linguist-documantation
+*.h linguist-documantation
