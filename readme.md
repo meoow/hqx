@@ -30,3 +30,13 @@ func main() {
 	png.Encode(destfile, newimg)
 }
 ```
+
+###Demo
+####1x
+![1x](sample.png)
+####2x
+![1x](sample_2x.png)
+####3x
+![1x](sample_3x.png)
+####4x
+![1x](sample_4x.png)
