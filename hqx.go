@@ -60,10 +60,10 @@ func img2data(img image.Image) []uint32 {
 				r, g, b, a := img.At(x, y).RGBA()
 
 				//[0, 0xffff] -> [0, 0xff]
-				r = narrowcolor(r)
-				g = narrowcolor(g)
-				b = narrowcolor(b)
-				a = narrowcolor(a)
+				r = roundcolor(r)
+				g = roundcolor(g)
+				b = roundcolor(b)
+				a = roundcolor(a)
 
 				// RGBA -> BGRA
 				data[idx] = (r << 8) | (g << 16) | (b << 24) | a
@@ -101,11 +101,20 @@ func data2img(data []uint32, width, height int) image.Image {
 	return imgout
 }
 
-func narrowcolor(c uint32) uint32 {
-	if c >= 0xff00 {
-		return c >> 8
+func roundcolor(a uint32) uint32 {
+	var b, c, d uint32
+	if a > 0xffff {
+		panic("never greater than 0xffff")
 	} else {
-		return ((c & 0xff00) + (((c & 0x00ff) >> 7) << 8)) >> 8
+		a <<= 8
+		b = a * 0xff / 0xffff
+		c = (b & 0xff00) >> 8
+		d = b & 0x00ff
+		if (d >> 7) == 1 {
+			c++
+		}
+		return c
 	}
-	return 0
+
+	panic("")
 }
