@@ -1,14 +1,14 @@
-#Go wrapper for [hqx](https://code.google.com/p/hqx/)
-##A fast, high-quality magnification filter designed for pixel art.
+# Go wrapper for [hqx](https://code.google.com/p/hqx/)
+## A fast, high-quality magnification filter designed for pixel art.
 
-###Install
+### Install
 ```sh
 go get github.com/meoow/hqx
 ```
 
 This library exposes three functions: **Hq2x**, **Hq3x** and **Hq4x**, which magnify by factor of 2, 3 and 4 respectively.
 
-###Example
+### Example
 ```go
 package main
 
@@ -31,12 +31,12 @@ func main() {
 }
 ```
 
-###Demo
-####1x
+### Demo
+#### 1x
 ![1x](sample.png)
-####2x
+#### 2x
 ![1x](sample_2x.png)
-####3x
+#### 3x
 ![1x](sample_3x.png)
-####4x
+#### 4x
 ![1x](sample_4x.png)
